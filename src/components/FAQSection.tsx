@@ -90,7 +90,7 @@ const FAQSection = () => {
           {/* FAQ list */}
           <motion.div
             variants={itemVariants}
-            className="bento-item border border-border/60 bg-card/80 backdrop-blur"
+            className="bento-item glass border border-white/25 bg-card/80 backdrop-blur-xl"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-accent/15 text-accent flex items-center justify-center">

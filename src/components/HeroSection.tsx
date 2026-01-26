@@ -44,7 +44,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <section className="relative min-h-0 flex items-start lg:items-center overflow-hidden pt-16 md:pt-20 lg:pt-24 pb-6 lg:pb-8">
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
 
@@ -53,7 +53,7 @@ const HeroSection = () => {
       <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -79,7 +79,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight"
+              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight max-w-xl sm:max-w-2xl text-balance"
             >
               {t("hero.headline")}
             </motion.h1>
@@ -89,7 +89,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg sm:max-w-xl leading-relaxed text-balance"
             >
               {t("hero.subheadline")}
             </motion.p>
@@ -128,12 +128,13 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
               <Button
                 variant="hero"
                 size="xl"
                 onClick={() => scrollToSection("#contact")}
+                className="glass shadow-premium-lg"
               >
                 {t("hero.cta.primary")}
                 <ArrowRight className="w-5 h-5 ml-1" />
@@ -142,6 +143,7 @@ const HeroSection = () => {
                 variant="heroOutline"
                 size="xl"
                 onClick={() => scrollToSection("#services")}
+                className="glass border-white/30 shadow-premium-lg"
               >
                 {t("hero.cta.secondary")}
               </Button>
@@ -152,30 +154,30 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="flex gap-8 pt-8 border-t border-border"
+              className="flex flex-wrap gap-4 sm:gap-6 pt-8 border-t border-border/70"
             >
-              <div>
+              <div className="glass rounded-2xl px-4 py-3 shadow-sm border border-white/30">
                 <div className="font-display text-3xl font-bold text-primary">
-                  3+
+                  5+
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  Years Experience
+                  {t("hero.stats.years")}
                 </div>
               </div>
-              <div>
+              <div className="glass rounded-2xl px-4 py-3 shadow-sm border border-white/30">
                 <div className="font-display text-3xl font-bold text-primary">
                   50+
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  Projects Delivered
+                  {t("hero.stats.projects")}
                 </div>
               </div>
-              <div>
+              <div className="glass rounded-2xl px-4 py-3 shadow-sm border border-white/30">
                 <div className="font-display text-3xl font-bold text-primary">
                   100%
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  Client Satisfaction
+                  {t("hero.stats.satisfaction")}
                 </div>
               </div>
             </motion.div>
@@ -202,17 +204,168 @@ const HeroSection = () => {
                   />
                 </div>
 
-                {/* Placeholder content */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center space-y-4 p-8">
-                    <div className="w-32 h-32 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="font-display text-5xl font-bold text-primary">
-                        SG
-                      </span>
+                {/* Abstract code visualization - glassmorphism */}
+                <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
+                  <div className="relative w-full max-w-xl h-full flex items-center justify-center">
+                    <div className="absolute inset-4 rounded-[30px] bg-gradient-to-br from-primary/25 via-background/40 to-accent/10 blur-3xl" />
+                    <div className="absolute inset-3 rounded-[26px] border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[0_24px_120px_-60px_rgba(0,0,0,0.75)]" />
+
+                    <div
+                      className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 w-full z-10"
+                      style={{ perspective: "1200px" }}
+                    >
+                      <motion.div
+                        initial={{ opacity: 1, y: 1, rotateX: 0, rotateY: -2 }}
+                        animate={{
+                          opacity: 1,
+                          y: [1, -2, 1],
+                          rotateX: [0, 0.5, 0],
+                          rotateY: [-2, -3, -2],
+                        }}
+                        transition={{
+                          delay: 0.2,
+                          duration: 6,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                        style={{ transform: "translateZ(26px) rotateY(-8deg)" }}
+                        className="group rounded-2xl border border-white/10 bg-white/10 backdrop-blur-xl p-4 shadow-[0_12px_60px_-30px_rgba(0,0,0,0.8)]"
+                      >
+                        <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.15em] text-primary/80">
+                          <span>React hooks</span>
+                          <span className="text-accent">live</span>
+                        </div>
+                        <div className="mt-3 space-y-2 font-mono text-xs text-muted-foreground">
+                          <div className="flex items-center gap-2 text-foreground">
+                            <span className="text-primary">const</span>
+                            <span> {`{ data, isLoading }`} </span>
+                            <span className="text-primary">=</span>
+                            <span className="text-accent">useQuery</span>
+                            <span>({"{"} key: "seo-metrics" {"}"})</span>
+                          </div>
+                          <div className="pl-2 border-l border-white/10">
+                            <span className="text-primary">useEffect</span>
+                            <span>{`(() => setMeta(data), [data])`}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="rounded-full px-2 py-1 text-[10px] bg-primary/10 text-primary">
+                              Tailwind
+                            </span>
+                            <span className="text-foreground/80">grid-cols-12 • gap-6</span>
+                          </div>
+                        </div>
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 1, y: 1.5, rotateX: 0, rotateY: 2 }}
+                        animate={{
+                          opacity: 1,
+                          y: [1.5, -3, 1.5],
+                          rotateX: [0, -0.5, 0],
+                          rotateY: [2, 3, 2],
+                        }}
+                        transition={{
+                          delay: 0.3,
+                          duration: 6.5,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                        style={{ transform: "translateZ(18px) rotateY(10deg)" }}
+                        className="relative rounded-2xl border border-white/10 bg-white/10 backdrop-blur-xl p-4 shadow-[0_12px_60px_-30px_rgba(0,0,0,0.8)] sm:-mt-6"
+                      >
+                        <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.12em] text-primary/80">
+                          <Sparkles className="w-3 h-3" />
+                          <span>UI fragments</span>
+                        </div>
+                        <div className="mt-3 space-y-2 font-mono text-xs text-muted-foreground">
+                          <div className="flex items-center gap-2 text-foreground">
+                            <span className="text-accent">return</span>
+                            <span>{`(<section className="glass grid md:grid-cols-2">)`}</span>
+                          </div>
+                          <div className="pl-3 border-l border-white/10 space-y-1">
+                            <span className="block text-foreground/90">
+                              {`<Button variant="ghost" className="hover:-translate-y-0.5">`}
+                            </span>
+                            <span className="block text-primary/90">
+                              {`<div className="rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10">`}
+                            </span>
+                            <span className="block">{`</div>`}</span>
+                          </div>
+                        </div>
+                        <div className="absolute -right-3 -bottom-3 rounded-xl bg-primary/15 text-[11px] text-primary px-3 py-1.5 border border-primary/30 shadow-lg">
+                          3D Glass UI
+                        </div>
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 1, y: 1, rotateX: 0 }}
+                        animate={{
+                          opacity: 1,
+                          y: [1, -2, 1],
+                          rotateX: [0, 0.75, 0],
+                        }}
+                        transition={{
+                          delay: 0.4,
+                          duration: 7,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                        style={{ transform: "translateZ(32px)" }}
+                        className="sm:col-span-2 rounded-2xl border border-white/10 bg-white/10 backdrop-blur-xl p-4 shadow-[0_16px_80px_-40px_rgba(0,0,0,0.7)]"
+                      >
+                        <div className="flex flex-wrap items-center justify-between gap-3 text-[11px] uppercase tracking-[0.14em] text-primary/80">
+                          <span>SEO pulse</span>
+                          <div className="flex items-center gap-2 text-foreground/80">
+                            <TrendingUp className="w-4 h-4 text-accent" />
+                            <span>+128% organic</span>
+                          </div>
+                        </div>
+                        <div className="mt-3 grid grid-cols-3 gap-3">
+                          {[72, 88, 94].map((value, idx) => (
+                            <div key={value} className="space-y-1">
+                              <div className="text-xs text-muted-foreground">
+                                {["CTR", "CLS", "Pagespeed"][idx]}
+                              </div>
+                              <div className="h-20 rounded-xl bg-white/5 border border-white/5 flex items-end justify-center overflow-hidden">
+                                <div
+                                  className="w-10 rounded-t-lg bg-gradient-to-t from-primary/50 via-primary/70 to-accent/80"
+                                  style={{ height: `${value}%` }}
+                                />
+                              </div>
+                              <div className="text-center text-xs font-semibold text-foreground">
+                                {value}%
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+                          <span className="flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-primary border border-primary/20">
+                            <Bot className="w-3 h-3" />
+                            AI insights on keywords
+                          </span>
+                          <span className="flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-accent border border-accent/20">
+                            <ArrowRight className="w-3 h-3" />
+                            +12.4 avg. position
+                          </span>
+                        </div>
+                      </motion.div>
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      Professional Portrait
-                    </p>
+
+                    {/* Floating chips */}
+                    <motion.div
+                      animate={{ y: [0, -2, 0], x: [0, 1, 0] }}
+                      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute top-6 left-8 rounded-full bg-background/60 border border-white/10 backdrop-blur-xl px-3 py-1.5 text-xs text-muted-foreground shadow-lg"
+                    >
+                      Glassmorphism • 3D
+                    </motion.div>
+                    <motion.div
+                      animate={{ y: [0, 3, 0], x: [0, -1, 0] }}
+                      transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute bottom-6 right-8 rounded-full bg-primary/15 border border-primary/20 text-primary px-3 py-1.5 text-xs shadow-lg"
+                    >
+                      Realtime UX
+                    </motion.div>
                   </div>
                 </div>
               </div>

@@ -11,26 +11,29 @@ interface Translations {
 
 export const translations: Translations = {
   // Navigation
-  "nav.home": { en: "Home", pl: "Strona główna" },
-  "nav.about": { en: "About", pl: "O mnie" },
+  "nav.home": { en: "Home Page", pl: "Strona główna" },
+  "nav.about": { en: "About Me", pl: "O mnie" },
   "nav.services": { en: "Services", pl: "Usługi" },
   "nav.contact": { en: "Contact", pl: "Kontakt" },
   "nav.cta.contact": { en: "Contact Me", pl: "Skontaktuj się ze mną" },
 
   // Hero Section
+  "hero.stats.years": { en: "Years of Experience", pl: "Lata Doświadczenia" },
+  "hero.stats.projects": { en: "Projects Delivered", pl: "Projekty Dostarczone" },
+  "hero.stats.satisfaction": { en: "Client Satisfaction", pl: "Zadowolenie Klientów" },
   "hero.headline": {
-    en: "Full Stack Engineer and SEO for the Medical Industry",
+    en: "Comprehensive websites and SEO strategy. I will create a modern online image for your company.",
     pl: "Kompleksowe strony internetowe & Strategia SEO. Stworzę nowoczesny wizerunek Twojej firmy w sieci.",
   },
   "hero.subheadline": {
-    en: "Full Stack Engineer & SEO Expert specializing in health-tech and business solutions. Combining technical excellence with strategic marketing.",
+    en: "I help brands and local businesses turn visitors into loyal customers. I design fast business card sites and effective landing pages that I immediately position in Google. I implement intelligent AI solutions, set up the sale of digital products, and take care of your visibility in Google Maps. You get not just code, but a complete tool that works for your success 24/7.",
     pl: "Pomagam markom i lokalnym biznesom zamieniać odwiedzających w lojalnych klientów. Projektuję szybkie strony wizytówki oraz skuteczne landing page, które od razu pozycjonuję w Google. Wdrażam inteligentne rozwiązania AI, konfiguruję sprzedaż produktów digitalowych i dbam o Twoją widoczność w mapach Google. Otrzymasz nie tylko kod, ale kompletne narzędzie, które pracuje na Twój sukces 24/7.",
   },
   "hero.cta.primary": {
-    en: "Get Free Technical Audit",
+    en: "Let's Talk About Your Business",
     pl: "Porozmawiajmy o Twoim biznesie",
   },
-  "hero.cta.secondary": { en: "Explore Services", pl: "Zobacz Usługi" },
+  "hero.cta.secondary": { en: "See Services", pl: "Zobacz Usługi" },
 
   // Feature Highlights
   "feature.pages.title": {
@@ -38,7 +41,7 @@ export const translations: Translations = {
     pl: "Strony & Landing Page",
   },
   "feature.pages.description": {
-    en: "Fast, responsive, and conversion-ready.",
+    en: "Fast, responsive, and ready to convert.",
     pl: "Szybkie, responsywne i gotowe do konwersji.",
   },
   "feature.seo.title": { en: "SEO & Google Maps", pl: "SEO & Mapy Google" },
@@ -48,19 +51,19 @@ export const translations: Translations = {
   },
   "feature.ai.title": { en: "AI Automation", pl: "Automatyzacja AI" },
   "feature.ai.description": {
-    en: "Smart chats that support your customers for you.",
+    en: "Smart chats that serve customers for you.",
     pl: "Inteligentne chaty, które obsługują klientów za Ciebie.",
   },
   "feature.payments.title": { en: "Online Payments", pl: "Płatności Online" },
   "feature.payments.description": {
-    en: "Simple sales of your digital products and services.",
+    en: "Simple sales of your e-books and services.",
     pl: "Prosta sprzedaż Twoich e-booków i usług.",
   },
 
   // Why Me Section
   "whyme.title": { en: "Why Me", pl: "Dlaczego Ja" },
   "whyme.subtitle": {
-    en: "I combine passion and expertise with the real needs of your business",
+    en: "I combine passion and knowledge with the real needs of your business",
     pl: "Łączę pasję i wiedzę z realnymi potrzebami Twojego biznesu",
   },
   "whyme.quality.title": {
@@ -68,7 +71,7 @@ export const translations: Translations = {
     pl: "Jakość bez kompromisów",
   },
   "whyme.quality.description": {
-    en: "I don't use pre-made, heavy templates or limited solutions. I build from scratch so your site is secure, fast, and refined in every technical detail, tailored to your needs.",
+    en: "I don't use ready-made, heavy templates or limited solutions. I build from scratch so your site is secure, fast, and refined in every technical detail, tailored to your needs.",
     pl: "Nie korzystam z gotowych, ociężąłych szablonów i ograniczonych rozwiązań. Tworzę od podstaw, aby twoja strona była bezpieczna, szybka i dopracowana w każdym detalu technicznym, dopasowana do Twoich potrzeb.",
   },
   "whyme.strategy.title": {
@@ -76,7 +79,7 @@ export const translations: Translations = {
     pl: "Strategiczne podejście",
   },
   "whyme.strategy.description": {
-    en: "A site nobody sees doesn't earn. From the first line of code I optimize your service for Google and build a structure algorithms love.",
+    en: "A site nobody sees doesn't earn. From the first line of code I optimize your service for Google. I build a structure that algorithms love.",
     pl: "Strona, której nikt nie widzi, nie zarabia. Od pierwszej linijki kodu optymalizuję Twój serwis pod wyszukiwarkę Google. Buduję strukturę, którą algorytmy kochają.",
   },
   "whyme.seo_ai.title": {
@@ -84,7 +87,7 @@ export const translations: Translations = {
     pl: "SEO & Generative AI Optimization",
   },
   "whyme.seo_ai.description": {
-    en: "Your site is built for more than Google. I optimize code and content so assistants like ChatGPT or Google Gemini recommend your business, building visibility where customers search today and tomorrow.",
+    en: "Your site is not only for Google. I optimize code and content so your business is recommended by AI assistants like ChatGPT or Google Gemini. I build visibility where your customers look for answers today and tomorrow.",
     pl: "Twoja strona nie tylko dla Google. Optymalizuję kod i treści tak, aby Twój biznes był polecany przez asystentów AI, takich jak ChatGPT czy Google Gemini. Buduję widoczność tam, gdzie Twoi klienci szukają odpowiedzi dzisiaj i jutro.",
   },
   "whyme.modern_ai.title": {
@@ -92,7 +95,7 @@ export const translations: Translations = {
     pl: "Nowoczesne technologie i AI",
   },
   "whyme.modern_ai.description": {
-    en: "I bring your business into the future. I build sites and implement smart AI assistants plus payment automations so your company can serve customers and sell even while you rest.",
+    en: "I bring your business into the future. I don't just build sites; I implement intelligent AI assistants and payment automations. Thanks to this, your company can serve customers and sell products even when you're resting.",
     pl: "Wprowadzam Twój biznes w przyszłość. Nie tylko tworzę strony, ale wdrażam inteligentnych asystentów AI oraz automatyzacje płatności. Dzięki temu Twoja firma może obsługiwać klientów i sprzedawać produkty nawet wtedy, gdy Ty odpoczywasz.",
   },
   "whyme.partnership.title": {
@@ -100,7 +103,7 @@ export const translations: Translations = {
     pl: "Partnerstwo, nie tylko usługa",
   },
   "whyme.partnership.description": {
-    en: "Not sure where to start? I guide you through the whole process, from choosing a domain and business listings to launch and optimization. You get full support and tools you truly understand and can use.",
+    en: "Not sure where to start? I will guide you through the entire process, from choosing a domain and business listing to implementation and optimization. You get full support and a tool you truly understand and can use.",
     pl: "Nie wiesz od czego zacząć? Przeprowadzę Cię przez cały proces, od wyboru domeny po konfigurację wizytówki, aż do wdrożenia i optymalizacji strony. Otrzymujesz ode mnie pełne wsparcie i narzędzie, które naprawdę rozumiesz i potrafisz obsługiwać.",
   },
   "whyme.cta.label": {
@@ -111,6 +114,26 @@ export const translations: Translations = {
     en: "Go to contact",
     pl: "Przejdź do kontaktu",
   },
+  "whyme.cta.banner.title": {
+    en: "Your project deserves a technological edge",
+    pl: "Twój projekt zasługuje na technologiczną przewagę",
+  },
+  "whyme.cta.banner.body": {
+    en: "Let’s talk about how AI and SEO can start working for your success.",
+    pl: "Porozmawiajmy o tym, jak AI i SEO mogą zacząć pracować na Twój sukces.",
+  },
+  "whyme.cta.banner.note": {
+    en: "Schedule a free consultation.",
+    pl: "Umów się na darmową konsultację",
+  },
+  "whyme.combined.title": {
+    en: "Architecture of Success: Code and Strategy",
+    pl: "Architektura Sukcesu: Kod i Strategia",
+  },
+  "whyme.combined.description": {
+    en: "I build websites that not only impress with design, but most of all earn. I skip heavy templates in favor of custom solutions optimized for SEO from the first line of code. This makes your site lightning fast, secure, and ready to fight for top positions in Google.",
+    pl: "Tworzę strony, które nie tylko zachwycają designem, ale przede wszystkim zarabiają. Rezygnuję z ciężkich szablonów na rzecz autorskich rozwiązań, które optymalizuję pod kątem SEO od pierwszej linijki kodu. Dzięki temu Twój serwis jest błyskawiczny, bezpieczny i gotowy na walkę o pierwsze miejsca w Google.",
+  },
 
   // Services Section
   "services.title": { en: "Services", pl: "Usługi" },
@@ -119,11 +142,11 @@ export const translations: Translations = {
     pl: "Kompleksowe rozwiązania dla Twojej obecności cyfrowej",
   },
   "services.webdev.title": {
-    en: "Custom Web Development",
+    en: "Building Websites from Scratch",
     pl: "Tworzenie Stron Od Podstaw",
   },
   "services.webdev.description": {
-    en: "Tailored web applications built from scratch. React, Node.js, and modern architectures for optimal performance.",
+    en: "Tailored web applications built from scratch. React, Node.js and modern architectures for optimal performance.",
     pl: "Dopasowane aplikacje webowe tworzone od podstaw. React, Node.js i nowoczesne architektury dla optymalnej wydajności.",
   },
   "services.seo.title": {
@@ -139,7 +162,7 @@ export const translations: Translations = {
     pl: "Audyty Bezpieczeństwa",
   },
   "services.security.description": {
-    en: "OAuth, JWT, 2FA implementation and security assessments. Protect your users and your business.",
+    en: "OAuth, JWT, and 2FA implementation plus security assessments. Protect your users and your business.",
     pl: "Implementacja OAuth, JWT, 2FA i oceny bezpieczeństwa. Chroń swoich użytkowników i biznes.",
   },
   "services.healthtech.title": {
@@ -147,8 +170,72 @@ export const translations: Translations = {
     pl: "Rozwiązania Health-Tech",
   },
   "services.healthtech.description": {
-    en: "Custom calculators, dashboards, and applications for health and wellness businesses.",
+    en: "Custom calculators, dashboards, and applications for the health and wellness sector.",
     pl: "Niestandardowe kalkulatory, dashboardy i aplikacje dla branży zdrowia i wellness.",
+  },
+  "services.subtitle.compact": {
+    en: "Three areas that deliver speed, visibility, and effortless operations.",
+    pl: "Trzy obszary, które dowożą szybkość, widoczność i bezproblemową obsługę.",
+  },
+  "services.group.dev.title": {
+    en: "Development & Design",
+    pl: "Development & Design",
+  },
+  "services.group.dev.desc": {
+    en: "I design and code from scratch. I'll create a fast and secure site that will work for your business.",
+    pl: "Projektuję i programuję od zera. Stworzę szybką i bezpieczną stronę, która będzie pracowała dla Twojego biznesu.",
+  },
+  "services.group.dev.b1": {
+    en: "I'll create a personalized site tailored to your needs that will make your company stand out.",
+    pl: "Stworzę spersonalizowaną stronę, dopasowaną do Twoich potrzeb która wyróżni Twoją firmę na rynku.",
+  },
+  "services.group.dev.b2": {
+    en: "I'll rewrite your current service so it runs faster and looks modern.",
+    pl: "Przepiszę Twój obecny serwis, aby działał szybciej i wyglądał nowocześnie.",
+  },
+  "services.group.dev.b3": {
+    en: "If you need a quick and cheaper solution, I'll build a fast business card site on one of my templates.",
+    pl: "Jeśli potrzebujesz szybkiego i tańszego rozwiązania, stworzę szybką wizytówkę na jednym z moich szablonów.",
+  },
+  "services.group.seoai.title": {
+    en: "Visibility in search and modern customer service",
+    pl: "Widocznośc w wyszukiwarkach i nowoczesna obsługa klienta",
+  },
+  "services.group.seoai.desc": {
+    en: "I'll make it easy for clients to find you, and artificial intelligence will help you serve them even when you sleep.",
+    pl: "Sprawię, że klienci łatwo Cię znajdą, a sztuczna inteligencja pomoże Ci ich obsłużyć nawet kiedy śpisz.",
+  },
+  "services.group.seoai.b1": {
+    en: "I'll do an SEO audit and show you how to improve visibility in search engines.",
+    pl: "Zrobię audyt SEO i wskażę Ci, jak poprawić widoczność w wyszukiwarkach.",
+  },
+  "services.group.seoai.b2": {
+    en: "I'll deploy an AI assistant that will answer customer questions 24/7.",
+    pl: "Wdrożę asystenta AI, który odpowie na pytania klientów 24/7.",
+  },
+  "services.group.seoai.b3": {
+    en: "I'll make sure local clients can see you on Google Maps.",
+    pl: "Zadbam o to, by lokalni klienci widzieli Cię na mapie Google.",
+  },
+  "services.group.care.title": {
+    en: "Full technical care – your external IT department.",
+    pl: "Pełna opieka techniczna - Twój zewnętrzny dział IT.",
+  },
+  "services.group.care.desc": {
+    en: "You're not interested in technology and don't want to waste time configuring it? I'll take everything on myself. From buying the domain and hosting, through design and coding, to ongoing maintenance. You focus on business; I make sure your technology simply works.",
+    pl: "Nie interesuje Cię technologia i nie chcesz tracić czasu na jej konfigurację? Wezmę wszystko na siebie. Od zakupu domeny i hostingu, przez projekt i kodowanie, aż po stałe utrzymanie. Ty zajmujesz się biznesem, ja dbam, żeby Twoja technologia po prostu działała.",
+  },
+  "services.group.care.b1": {
+    en: "I'll register the domain, configure hosting, and company email for you.",
+    pl: "Zarejestruję domenę, skonfiguruję hosting i pocztę firmową za Ciebie.",
+  },
+  "services.group.care.b2": {
+    en: "I'll create a unique website from the first line of code, tailored to your brand.",
+    pl: "Stworzę unikalną stronę od pierwszej linijki kodu, dopasowaną do Twojej marki.",
+  },
+  "services.group.care.b3": {
+    en: "I'll take care of security and keeping the data on the site up to date.",
+    pl: "Zadbam o bezpieczeństwo oraz aktualizację danych na stronie.",
   },
 
   // Offer - Challenge Section
@@ -157,7 +244,7 @@ export const translations: Translations = {
     pl: "Wybierz swoje wyzwanie",
   },
   "offer.challenge.subtitle": {
-    en: "Pick the situation that sounds like you and see how I fix it.",
+    en: "Choose the scenario that sounds familiar and see how I will fix it.",
     pl: "Wybierz scenariusz, który brzmi znajomo, i zobacz, jak to naprawię.",
   },
   "offer.challenge.label": {
@@ -170,20 +257,20 @@ export const translations: Translations = {
   },
   "offer.challenge.card.web.tag": { en: "Websites", pl: "Strony WWW" },
   "offer.challenge.card.web.title": {
-    en: "I have no site or my current one scares visitors",
+    en: "I don't have a site or the current one scares visitors",
     pl: "Nie mam strony lub obecna strona straszy",
   },
   "offer.challenge.card.web.description": {
-    en: "You get a modern, fast site that leads visitors straight to contact or sale.",
+    en: "You will get a modern, fast site that leads visitors straight to contact or purchase.",
     pl: "Otrzymasz nowoczesną, szybką stronę, która prowadzi odwiedzającego prosto do kontaktu lub zakupu.",
   },
   "offer.challenge.card.ai.tag": { en: "AI Agents", pl: "Agenci AI" },
   "offer.challenge.card.ai.title": {
-    en: "Clients keep asking the same questions",
+    en: "My clients keep asking the same questions",
     pl: "Moi klienci zadają ciągle te same pytania",
   },
   "offer.challenge.card.ai.description": {
-    en: "I implement an AI chatbot that answers 24/7, captures leads, and schedules calls.",
+    en: "I implement an AI chatbot that answers 24/7, collects leads, and schedules calls.",
     pl: "Wdrażam chatbota AI, który odpowiada 24/7, zbiera leady i umawia rozmowy.",
   },
   "offer.challenge.card.seo.tag": { en: "SEO & Maps", pl: "SEO & Maps" },
@@ -197,7 +284,7 @@ export const translations: Translations = {
   },
   "offer.challenge.card.care.tag": { en: "IT Care", pl: "Opieka IT" },
   "offer.challenge.card.care.title": {
-    en: "Tech overwhelms me — I just want it to work",
+    en: "Technology overwhelms me — I just want it to work",
     pl: "Technologia mnie przytłacza, chcę żeby po prostu działało",
   },
   "offer.challenge.card.care.description": {
@@ -235,7 +322,7 @@ export const translations: Translations = {
     pl: "Inteligentna Automatyzacja AI",
   },
   "offer.pillars.ai.point1": {
-    en: "AI chatbots and agents that answer clients instantly.",
+    en: "AI chatbots and agents that respond to clients instantly.",
     pl: "Chatboty i agenci AI, którzy odpowiadają klientom natychmiast.",
   },
   "offer.pillars.ai.point2": {
@@ -282,23 +369,23 @@ export const translations: Translations = {
   // Offer - Care & Hosting
   "offer.hosting.title": { en: "Care & Hosting", pl: "Opieka i Hosting" },
   "offer.hosting.subtitle": {
-    en: "Worry-free operations so your site keeps earning.",
+    en: "Stress-free maintenance so your site can keep earning.",
     pl: "Bezstresowe utrzymanie, żeby Twoja strona mogła zarabiać.",
   },
   "offer.hosting.body": {
-    en: "I handle everything: from buying your domain to secure hosting and technical care. You focus on business, I make sure your site always works.",
+    en: "I handle everything: from buying your domain to secure hosting and technical care. You focus on business; I make sure your site always works.",
     pl: "Zajmuję się wszystkim: od zakupu domeny po bezpieczny hosting i opiekę techniczną. Ty zajmujesz się biznesem, ja dbam, żeby Twoja strona zawsze działała.",
   },
   "offer.hosting.bullet1": {
-    en: "Small copy tweaks and updates included in your care plan.",
+    en: "Minor copy tweaks and updates included in the care plan.",
     pl: "Drobne poprawki tekstu i aktualizacje w pakiecie opieki.",
   },
   "offer.hosting.bullet2": {
-    en: "24/7 monitoring, backups, and rapid restore if something breaks.",
+    en: "24/7 monitoring, backups, and fast restores if something breaks.",
     pl: "Monitoring 24/7, backupy i szybkie przywracanie w razie problemów.",
   },
   "offer.hosting.bullet3": {
-    en: "Dedicated tech partner who speaks human, not jargon.",
+    en: "A dedicated technical partner who speaks plainly, without jargon.",
     pl: "Stały opiekun techniczny, który mówi po ludzku, bez żargonu.",
   },
   "offer.hosting.cta": {
@@ -319,19 +406,61 @@ export const translations: Translations = {
     pl: "Priorytetowa reakcja dla moich klientów",
   },
 
-  // Lead Magnet
+  // Lead / Contact
+  "lead.badge": { en: "Contact", pl: "Kontakt" },
   "lead.title": {
-    en: "Get Your Free SEO & Tech Report",
-    pl: "Bezpłatny Raport SEO & Tech",
+    en: "Send a message",
+    pl: "Wyślij wiadomość",
+  },
+  "lead.heading": {
+    en: "Let's talk about your project",
+    pl: "Porozmawiajmy o Twoim projekcie",
   },
   "lead.subtitle": {
-    en: "Discover actionable insights to improve your website's performance and visibility",
-    pl: "Odkryj praktyczne wskazówki, aby poprawić wydajność i widoczność Twojej strony",
+    en: "Do you have a specific need? Or maybe you don't know where to start? Perhaps you have a vision but don't know exactly how to tackle it? Get in touch. I'll guide you through the entire process—from the first brainstorming session, through choosing the technology, to launching the finished site.",
+    pl: "Masz konkretną potrzebę? A może nie wiesz od czego zacząć? Może masz wizję, ale nie wiesz dokładnie, jak ją „ugryźć”? Skontaktuj się ze mną. Przeprowadzę Cię przez cały proces - od pierwszej burzy mózgów, przez wybór technologii, aż po start gotowej strony.",
   },
+  "lead.subtitle.highlight": {
+    en: "Do you have a specific need? Or maybe you don't know where to start? Perhaps you have a vision but don't know exactly how to tackle it?",
+    pl: "Masz konkretną potrzebę? A może nie wiesz od czego zacząć? Może masz wizję, ale nie wiesz dokładnie, jak ją „ugryźć”?",
+  },
+  "lead.subtitle.rest": {
+    en: " Get in touch. I'll guide you through the entire process—from the first brainstorming session, through choosing the technology, to launching the finished site.",
+    pl: " Skontaktuj się ze mną. Przeprowadzę Cię przez cały proces - od pierwszej burzy mózgów, przez wybór technologii, aż po start gotowej strony.",
+  },
+  "lead.body": {
+    en: "I treat every project individually. Whether you need a simple business card site or an advanced system with AI — I'm here to turn your challenges into effective solutions.",
+    pl: "Każdy projekt traktuję indywidualnie. Niezależnie od tego, czy potrzebujesz prostej wizytówki, czy zaawansowanego systemu z AI - jestem tu, aby zamienić Twoje wyzwania w sprawne rozwiązania.",
+  },
+  "lead.body.highlight": {
+    en: "I treat every project individually.",
+    pl: "Każdy projekt traktuję indywidualnie.",
+  },
+  "lead.body.rest": {
+    en: " Whether you need a simple business card site or an advanced system with AI — I'm here to turn your challenges into effective solutions.",
+    pl: " Niezależnie od tego, czy potrzebujesz prostej wizytówki, czy zaawansowanego systemu z AI - jestem tu, aby zamienić Twoje wyzwania w sprawne rozwiązania.",
+  },
+  "lead.custom": {
+    en: "Do you have a non-standard request? Write freely! I love projects that require unconventional thinking. Describe your idea and together we'll figure out how to execute it best.",
+    pl: "Masz niestandardowe zlecenie? Napisz śmiało! Uwielbiam projekty, które wymagają nieszablonowego myślenia. Opisz swój pomysł, a wspólnie zastanowimy się, jak go najlepiej zrealizować.",
+  },
+  "lead.first_call": {
+    en: "The first call is non-binding — we'll see what can be done and how to tailor the scope.",
+    pl: "Pierwsza rozmowa jest niezobowiązująca — zobaczymy, co da się zrobić i jak dopasować zakres.",
+  },
+  "lead.messagePlaceholder": {
+    en: "Briefly describe the project, business goals, and timeline.",
+    pl: "Opisz krótko projekt, cele biznesowe i termin.",
+  },
+  "lead.messageLabel": { en: "What do you need?", pl: "Czego potrzebujesz?" },
   "lead.name": { en: "Your Name", pl: "Twoje Imię" },
   "lead.email": { en: "Email Address", pl: "Adres Email" },
-  "lead.website": { en: "Website URL", pl: "Adres Strony" },
-  "lead.submit": { en: "Get My Free Report", pl: "Pobierz Bezpłatny Raport" },
+  "lead.submit": { en: "Send Message", pl: "Wyślij wiadomość" },
+  "lead.processing": { en: "Processing...", pl: "Przetwarzanie..." },
+  "lead.error": {
+    en: "Something went wrong. Please try again in a moment.",
+    pl: "Coś poszło nie tak. Spróbuj ponownie za chwilę.",
+  },
   "lead.success": {
     en: "Thank you! Your report will be delivered within 24 hours.",
     pl: "Dziękuję! Twój raport zostanie dostarczony w ciągu 24 godzin.",
@@ -350,8 +479,8 @@ export const translations: Translations = {
     pl: "Ile trwa stworzenie strony?",
   },
   "faq.q1.answer": {
-    en: "A focused landing page is usually 2–3 weeks. A full site with multiple subpages and integrations is typically 4–6 weeks, depending on feedback speed and scope.",
-    pl: "Skoncentrowany landing page to zwykle 2–3 tygodnie. Pełna strona z wieloma podstronami i integracjami to zazwyczaj 4–6 tygodni, w zależności od tempa feedbacku i zakresu.",
+    en: "A focused landing page is usually 2-3 weeks. A full site with multiple subpages and integrations is typically 4-6 weeks, depending on feedback speed and scope.",
+    pl: "Skoncentrowany landing page to zwykle 2-3 tygodnie. Pełna strona z wieloma podstronami i integracjami to zazwyczaj 4-6 tygodni, w zależności od tempa feedbacku i zakresu.",
   },
   "faq.q2.question": {
     en: "Will my site be optimized for SEO and speed?",

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Code2, Target, TrendingUp, Cpu, Users } from 'lucide-react';
+import { Code2, Target, TrendingUp, Cpu, Users, ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -43,8 +43,15 @@ const WhyMeSection = () => {
     },
   ];
 
-  const primaryFeatures = features.slice(0, 3);
-  const highlightFeatures = features.slice(3);
+  const combinedFeature = {
+    icon: Code2,
+    titleKey: 'whyme.combined.title',
+    descriptionKey: 'whyme.combined.description',
+    skills: ['Custom Development', 'SEO-Ready Code', 'Core Web Vitals', 'Security'],
+  };
+
+  const secondaryFeatures = [features[2], features[3]];
+  const partnershipFeature = features[4];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -66,7 +73,11 @@ const WhyMeSection = () => {
   };
 
   return (
-    <section id="about" className="section-padding bg-secondary/30" ref={ref}>
+    <section
+      id="about"
+      className="section-padding bg-secondary/30 pt-16 md:pt-18 lg:pt-20"
+      ref={ref}
+    >
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -87,19 +98,47 @@ const WhyMeSection = () => {
         </motion.div>
 
         {/* Features Grid */}
-        {/* Primary cards */}
+        {/* Three-up grid with combined first card */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid sm:grid-cols-2 xl:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
         >
-          {primaryFeatures.map((feature, index) => (
-            <motion.div
-              key={feature.titleKey}
-              variants={itemVariants}
-              className="bento-item group"
-            >
+          {/* Combined card */}
+          <motion.div variants={itemVariants} className="bento-item group glass h-full flex flex-col">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/25 to-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <combinedFeature.icon className="w-9 h-9 text-accent" />
+            </div>
+            <h3 className="font-display text-2xl font-bold text-primary mb-4 leading-tight">
+              {t(combinedFeature.titleKey)}
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              {t(combinedFeature.descriptionKey)}
+            </p>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {combinedFeature.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1 text-xs font-medium glass border border-white/30 text-muted-foreground rounded-full"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Remaining feature cards */}
+          {secondaryFeatures.map((feature, index) => {
+            const isLast = index === secondaryFeatures.length - 1;
+            return (
+              <motion.div
+                key={feature.titleKey}
+                variants={itemVariants}
+                className={`bento-item group glass h-full flex flex-col ${
+                  isLast ? 'md:col-span-2 xl:col-span-1' : ''
+                }`}
+              >
               {/* Icon */}
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <feature.icon className="w-7 h-7 text-accent" />
@@ -114,86 +153,11 @@ const WhyMeSection = () => {
               </p>
 
               {/* Skills Tags */}
-              <div className="flex flex-wrap gap-2">
-                {feature.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 text-xs font-medium bg-secondary text-muted-foreground rounded-full"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Highlight cards */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="grid sm:grid-cols-2 gap-8 mt-8"
-        >
-          {highlightFeatures.map((feature, index) => {
-            const isLast = index === highlightFeatures.length - 1;
-            if (isLast) {
-              return (
-                <motion.div
-                  key={feature.titleKey}
-                  variants={itemVariants}
-                  className="bento-item group sm:col-span-1 md:py-10 md:px-10 bg-gradient-to-br from-[#0f172a] to-[#0b1224] text-white border border-white/10 shadow-lg shadow-black/20"
-                >
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-white/10 border border-white/15 text-amber-200">
-                    <feature.icon className="w-8 h-8" />
-                  </div>
-
-                  <h3 className="font-display text-2xl font-bold mb-3 text-white">
-                    {t(feature.titleKey)}
-                  </h3>
-                  <p className="leading-relaxed mb-6 text-white/80">
-                    {t(feature.descriptionKey)}
-                  </p>
-
-                  <div className="mt-6 flex flex-col gap-3">
-                    <span className="text-sm text-white/75 font-medium">
-                      {t('whyme.cta.label')}
-                    </span>
-                    <Button
-                      asChild
-                      variant="accent"
-                      size="lg"
-                      className="rounded-xl shadow-premium-xl w-full sm:w-auto"
-                    >
-                      <a href="#contact">{t('whyme.cta.button')}</a>
-                    </Button>
-                  </div>
-                </motion.div>
-              );
-            }
-
-            return (
-              <motion.div
-                key={feature.titleKey}
-                variants={itemVariants}
-                className="bento-item group sm:col-span-1 md:py-10 md:px-10"
-              >
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br from-accent/25 to-accent/10 text-accent">
-                  <feature.icon className="w-8 h-8" />
-                </div>
-
-                <h3 className="font-display text-2xl font-bold mb-3 text-primary">
-                  {t(feature.titleKey)}
-                </h3>
-                <p className="leading-relaxed mb-6 text-muted-foreground">
-                  {t(feature.descriptionKey)}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {feature.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 text-xs font-medium bg-secondary text-muted-foreground rounded-full"
+                      className="px-3 py-1 text-xs font-medium glass border border-white/30 text-muted-foreground rounded-full"
                     >
                       {skill}
                     </span>
@@ -202,6 +166,46 @@ const WhyMeSection = () => {
               </motion.div>
             );
           })}
+        </motion.div>
+
+        {/* CTA Banner */}
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="mt-10"
+        >
+          <div className="cta-banner rounded-[24px] overflow-hidden">
+            <div className="relative p-8 md:p-12 flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center justify-between">
+              <div className="flex-1 space-y-4">
+                <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.08em] text-accent">
+                  <Users className="w-4 h-4" />
+                  {t(partnershipFeature.titleKey)}
+                </span>
+                <h3 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight">
+                  {t('whyme.cta.banner.title')}
+                </h3>
+                <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-3xl">
+                  {t('whyme.cta.banner.body')}
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3 w-full md:w-auto">
+                <Button
+                  asChild
+                  variant="accent"
+                  size="lg"
+                  className="glow-button px-7 py-3 text-base md:text-lg rounded-xl inline-flex items-center gap-2 justify-center"
+                >
+                  <a href="#contact" className="flex items-center gap-2">
+                    {t('whyme.cta.button')}
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                </Button>
+                <span className="text-sm text-white/70">{t('whyme.cta.banner.note')}</span>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

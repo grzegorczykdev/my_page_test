@@ -37,7 +37,9 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass shadow-premium-lg" : "bg-transparent"
+        isScrolled
+          ? "glass shadow-premium-lg"
+          : "bg-background/70 backdrop-blur-xl border-b border-border/30"
       }`}
     >
       <nav className="container-custom">
@@ -62,7 +64,7 @@ const Navbar = () => {
               <motion.button
                 key={item.key}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group rounded-full px-3 py-1.5 glass"
                 whileHover={{ y: -2 }}
               >
                 {t(item.key)}
@@ -74,7 +76,7 @@ const Navbar = () => {
           {/* Language Toggle + CTA */}
           <div className="hidden md:flex items-center gap-4">
             {/* Language Toggle */}
-            <div className="flex items-center bg-secondary rounded-full p-1">
+            <div className="flex items-center glass rounded-full p-1.5 border border-white/20 shadow-sm">
               <button
                 onClick={() => setLanguage("en")}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-300 ${

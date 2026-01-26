@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-12">
       <div className="container-custom">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="glass bg-primary/15 border-white/20 rounded-2xl p-6 md:p-8 shadow-premium-lg flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.02 }}
