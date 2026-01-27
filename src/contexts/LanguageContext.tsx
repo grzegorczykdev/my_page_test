@@ -462,8 +462,8 @@ export const translations: Translations = {
     pl: "Coś poszło nie tak. Spróbuj ponownie za chwilę.",
   },
   "lead.success": {
-    en: "Thank you! Your report will be delivered within 24 hours.",
-    pl: "Dziękuję! Twój raport zostanie dostarczony w ciągu 24 godzin.",
+    en: "Your message has been sent!",
+    pl: "Twoja wiadomość została wysłana!",
   },
 
 

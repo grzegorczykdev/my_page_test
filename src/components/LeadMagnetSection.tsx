@@ -224,12 +224,19 @@ const LeadMagnetSection = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
-              className="text-center py-8 glass rounded-2xl border border-white/20 bg-white/5"
+              className="relative text-center py-8 glass rounded-2xl border border-white/20 bg-white/5"
             >
+              <button
+                type="button"
+                onClick={() => setIsSubmitted(false)}
+                className="absolute right-3 top-3 text-muted-foreground hover:text-primary transition-colors"
+                aria-label={t('lead.close')}
+              >
+                ✕
+              </button>
               <div className="w-20 h-20 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6">
                 <CheckCircle className="w-10 h-10 text-accent" />
               </div>
-              <h3 className="font-display text-2xl font-bold text-primary mb-3">Thank You!</h3>
               <p className="text-muted-foreground max-w-md mx-auto">{t('lead.success')}</p>
             </motion.div>
           )}
