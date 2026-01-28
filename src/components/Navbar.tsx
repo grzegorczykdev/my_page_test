@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -6,6 +7,8 @@ import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -29,6 +32,13 @@ const Navbar = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
+  };
+
+  const handleLanguageChange = (targetLang: "pl" | "en") => {
+    const normalized = targetLang === "pl" ? "pl" : "en";
+    setLanguage(normalized);
+    const { search, hash } = location;
+    navigate(`/${normalized}${search}${hash}`);
   };
 
   return (
@@ -78,7 +88,7 @@ const Navbar = () => {
             {/* Language Toggle */}
             <div className="flex items-center glass rounded-full p-1.5 border border-white/20 shadow-sm">
               <button
-                onClick={() => setLanguage("en")}
+                onClick={() => handleLanguageChange("en")}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-300 ${
                   language === "en"
                     ? "bg-primary text-primary-foreground"
@@ -88,7 +98,7 @@ const Navbar = () => {
                 EN
               </button>
               <button
-                onClick={() => setLanguage("pl")}
+                onClick={() => handleLanguageChange("pl")}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-300 ${
                   language === "pl"
                     ? "bg-primary text-primary-foreground"
@@ -142,7 +152,7 @@ const Navbar = () => {
               <div className="flex items-center gap-2 py-2">
                 <span className="text-sm text-muted-foreground">Language:</span>
                 <button
-                  onClick={() => setLanguage("en")}
+                  onClick={() => handleLanguageChange("en")}
                   className={`px-3 py-1 text-sm font-medium rounded ${
                     language === "en"
                       ? "bg-primary text-primary-foreground"
@@ -152,7 +162,7 @@ const Navbar = () => {
                   EN
                 </button>
                 <button
-                  onClick={() => setLanguage("pl")}
+                  onClick={() => handleLanguageChange("pl")}
                   className={`px-3 py-1 text-sm font-medium rounded ${
                     language === "pl"
                       ? "bg-primary text-primary-foreground"

@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -28,6 +27,25 @@ const LeadMagnetSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [lastSubmitAt, setLastSubmitAt] = useState<number | null>(null);
+
+  // Ensure reCAPTCHA script is available in local/dev; Netlify injects it on production.
+  useEffect(() => {
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      'script[src="https://www.google.com/recaptcha/api.js"]'
+    );
+    if (existingScript) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -39,6 +57,12 @@ const LeadMagnetSection = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (lastSubmitAt && Date.now() - lastSubmitAt < 8000) {
+      setSubmitError(t('lead.rateLimit'));
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitError(null);
 
@@ -46,16 +70,13 @@ const LeadMagnetSection = () => {
       formSchema.parse(formData);
 
       const form = e.target as HTMLFormElement;
-      const botFieldValue =
-        (form.elements.namedItem('bot-field') as HTMLInputElement | null)?.value || '';
+      const netlifyForm = new FormData(form);
+      netlifyForm.set('form-name', 'contact'); // ensure consistency
 
-      const body = new URLSearchParams({
-        'form-name': 'contact',
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-        'bot-field': botFieldValue,
-      }).toString();
+      // Include reCAPTCHA token and any new hidden fields Netlify injects.
+      const body = new URLSearchParams(
+        Array.from(netlifyForm.entries()).map(([key, value]) => [key, String(value)])
+      ).toString();
 
       const response = await fetch('/', {
         method: 'POST',
@@ -70,6 +91,7 @@ const LeadMagnetSection = () => {
       setFormData({ name: '', email: '', message: '' });
       setErrors({});
       setIsSubmitted(true);
+      setLastSubmitAt(Date.now());
     } catch (error) {
       if (error instanceof z.ZodError) {
         const newErrors: Record<string, string> = {};
@@ -123,6 +145,7 @@ const LeadMagnetSection = () => {
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
+                data-netlify-recaptcha="true"
                 onSubmit={handleSubmit}
                 className="space-y-4 glass rounded-2xl p-4 md:p-6 border border-white/20 shadow-premium-lg bg-white/5"
               >
@@ -213,6 +236,7 @@ const LeadMagnetSection = () => {
                     <span className="flex items-center gap-2">{t('lead.submit')}</span>
                   )}
                 </Button>
+                <div data-netlify-recaptcha="true" className="flex justify-center" />
                 {submitError && (
                   <p className="text-xs text-destructive text-center">{submitError}</p>
                 )}

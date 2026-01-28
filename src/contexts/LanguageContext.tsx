@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
 
 type Language = "en" | "pl";
 
@@ -461,9 +467,14 @@ export const translations: Translations = {
     en: "Something went wrong. Please try again in a moment.",
     pl: "Coś poszło nie tak. Spróbuj ponownie za chwilę.",
   },
+  "lead.close": { en: "Close", pl: "Zamknij" },
   "lead.success": {
     en: "Your message has been sent!",
     pl: "Twoja wiadomość została wysłana!",
+  },
+  "lead.rateLimit": {
+    en: "Please wait a moment before sending again.",
+    pl: "Poczekaj chwilę przed ponownym wysłaniem.",
   },
 
 
@@ -522,20 +533,35 @@ export const translations: Translations = {
   },
 };
 
+const normalizeLanguage = (lang?: string): Language =>
+  lang?.toLowerCase() === "pl" ? "pl" : "en";
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
 }
 
+interface LanguageProviderProps {
+  children: ReactNode;
+  initialLanguage?: Language;
+}
+
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children,
+  initialLanguage = "en",
 }) => {
-  const [language, setLanguage] = useState<Language>("pl");
+  const [language, setLanguage] = useState<Language>(() =>
+    normalizeLanguage(initialLanguage)
+  );
+
+  useEffect(() => {
+    setLanguage(normalizeLanguage(initialLanguage));
+  }, [initialLanguage]);
 
   const t = (key: string): string => {
     const translation = translations[key];
